@@ -1,0 +1,24 @@
+application: osojiprototype
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /static/admin
+  static_dir: static/admin
+  expiration: '0'
+
+- url: /static
+  static_dir: static
+
+- url: /.*
+  script: main.app
+  
+- url: /media
+  static_dir: media
+  expiration: '0'
+  
+libraries:
+- name: django
+  version: "1.4"

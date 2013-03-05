@@ -1,0 +1,12 @@
+<h1>依頼</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="../new/" method="POST">{% csrf_token %}
+{{ cleanup_request_form.as_p }}
+{{ cleanup_place_form_set.management_form }}
+{% for cleanup_place_form in cleanup_place_form_set %}
+   {{ cleanup_place_form.as_table }}
+    <br />
+{% endfor %}    
+<input type="submit" value="この内容で入札を募集する" />
+</form>

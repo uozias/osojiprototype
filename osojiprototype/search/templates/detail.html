@@ -1,0 +1,9 @@
+<h1>{{ cleanup_request.customer.first_name }}</h1>
+<ul>
+    <li>入札期限:{{cleanup_request.delivery}}</li>
+    <li>上限金額:{{cleanup_request.maximum_price}}</li>
+    <li>コメント:{{cleanup_request.comment}}</li>
+    {% for p in cleanup_places %}
+        <li>箇所:{{ p.cleanup_place_kind}}</li>
+    {% endfor %}
+</ul>
